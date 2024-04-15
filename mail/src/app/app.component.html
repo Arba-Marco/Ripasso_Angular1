@@ -1,45 +1,56 @@
+<!-- Intestazione con sfondo rosso e testo bianco centrato -->
 <div class="container-fluid p-5 bg-danger text-white text-center">
-    <h1><b>GMAIL 2.0</b></h1>
-  </div>
+  <h1><b>GMAIL 2.0</b></h1> <!-- Titolo "GMAIL 2.0" in grassetto -->
+</div>
 
-  <div id='gmail-logo'></div><!-- Prof ho provato ad inserire il logo gmail
-     ma non ci sono riuscito  -->
+<!-- Div per il logo di Gmail (attualmente vuoto) -->
+<div id='gmail-logo'></div><!-- Prof ho provato ad inserire il logo gmail ma non ci sono riuscito -->
 
-  <div class="container mt-5">
-    <h3 class="mb-4">mail:</h3>
-    <form (submit)="salvaEmail()" class="was-validated shadow p-4 rounded">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label for="uname" class="form-label"><b>Da:</b></label>
-            <input type="email"  id="uname" placeholder="La tua mail" name="Destinatario" required [(ngModel)]="mittente">
-            <div class="valid-feedback">👍🏿</div>
-            <div class="invalid-feedback">Inserisci una mail valida.</div>
-          </div>
-          <div class="mb-3">
-            <label for="subject" class="form-label"><b>Oggetto:</b></label>
-            <input type="text" id="subject" placeholder="Oggetto mail" name="oggetto" required [(ngModel)]="oggetto">
-            <div class="valid-feedback">👍🏿</div>
-            <div class="invalid-feedback">Inserisci l'oggetto.</div>
-          </div>
+<!-- Modulo per l'invio di email -->
+<div class="container mt-5">
+  <h3 class="mb-4">mail:</h3> <!-- Sottotitolo "mail:" -->
+  <!-- Form per l'invio di email -->
+  <form (submit)="salvaEmail()" class="was-validated shadow p-4 rounded">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Campo per l'indirizzo email del mittente -->
+        <div class="mb-3">
+          <label for="uname" class="form-label"><b>Da:</b></label>
+          <input type="email"  id="uname" placeholder="La tua mail" name="Destinatario" required [(ngModel)]="mittente">
+          <div class="valid-feedback">👍🏿</div> <!-- Feedback di validità (valido) -->
+          <div class="invalid-feedback">Inserisci una mail valida.</div> <!-- Feedback di validità (non valido) -->
         </div>
-        <div class="col-md-6">
-          <div class="mb-3">
-            <label for="pwd" class="form-label"><b>Destinatario:</b></label>
-            <input type="email"  id="pwd" placeholder="Destinatario della mail" name="destinatario" required [(ngModel)]="destinatario">
-            <div class="valid-feedback">👍🏿</div>
-            <div class="invalid-feedback">Inserisci una mail valida per il destinatario.</div>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label"><b>Testo:</b></label>
-            <textarea  id="message" placeholder="Testo" name="testo" required [(ngModel)]="testo"></textarea>
-            <div class="valid-feedback">👍🏿</div>
-            <div class="invalid-feedback">Inserisci il testo.</div>
-          </div>
+        <!-- Campo per l'oggetto dell'email -->
+        <div class="mb-3">
+          <label for="subject" class="form-label"><b>Oggetto:</b></label>
+          <input type="text" id="subject" placeholder="Oggetto mail" name="oggetto" required [(ngModel)]="oggetto">
+          <div class="valid-feedback">👍🏿</div> <!-- Feedback di validità (valido) -->
+          <div class="invalid-feedback">Inserisci l'oggetto.</div> <!-- Feedback di validità (non valido) -->
         </div>
       </div>
-      <button type="submit" class="btn btn-danger">Invia e salva</button>
-    </form>
-  </div>
-  <app-sent-email [emails]="emails"> </app-sent-email>
+      <div class="col-md-6">
+        <!-- Campo per l'indirizzo email del destinatario -->
+        <div class="mb-3">
+          <label for="pwd" class="form-label"><b>Destinatario:</b></label>
+          <input type="email"  id="pwd" placeholder="Destinatario della mail" name="destinatario" required [(ngModel)]="destinatario">
+          <div class="valid-feedback">👍🏿</div> <!-- Feedback di validità (valido) -->
+          <div class="invalid-feedback">Inserisci una mail valida per il destinatario.</div> <!-- Feedback di validità (non valido) -->
+        </div>
+        <!-- Campo per il testo dell'email -->
+        <div class="mb-3">
+          <label for="message" class="form-label"><b>Testo:</b></label>
+          <textarea  id="message" placeholder="Testo" name="testo" required [(ngModel)]="testo"></textarea>
+          <div class="valid-feedback">👍🏿</div> <!-- Feedback di validità (valido) -->
+          <div class="invalid-feedback">Inserisci il testo.</div> <!-- Feedback di validità (non valido) -->
+        </div>
+      </div>
+    </div>
+    <!-- Pulsante per inviare e salvare l'email -->
+    <button type="submit" class="btn btn-danger">Invia e salva</button>
+  </form>
+</div>
+
+<!-- Componente personalizzato per visualizzare le email inviate -->
+<app-sent-email [emails]="emails"> </app-sent-email>
+   
   
